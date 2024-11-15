@@ -126,6 +126,7 @@ export function HeroComponent() {
           </button>
         ))}
       </div>
+      
     </div>
   );
 }
