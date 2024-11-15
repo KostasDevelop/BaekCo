@@ -1,0 +1,9 @@
+.active-link::after {
+    content: "";
+    position: absolute;
+    bottom: -2px; /* Ajusta el espacio entre el texto y el subrayado */
+    left: 0;
+    width: 100%;
+    height: 2px; /* Grosor del subrayado */
+    background-color: #19354A; /* Usa el color del texto */
+  }
