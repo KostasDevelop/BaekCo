@@ -22,14 +22,14 @@ function LinkList({ title, links }) {
     <div>
       {/* Título actualizado */}
       <h3 className="text-2xl font-bold text-white mb-4">{title}</h3>
-      
+
       <ul className="space-y-2">
         {links.map((link, index) => (
           <li key={index} className="flex items-center space-x-2">
             {/* Agregar un ° al lado de cada enlace */}
             <span className="text-white">°</span>
-            <Link 
-              to={link.path} 
+            <Link
+              to={link.path}
               className="text-gray-300 hover:text-white hover:underline"
             >
               {link.label}
@@ -46,11 +46,15 @@ export function Footer() {
   return (
     <>
       <footer className="bg-[#19354A] px-20 text-white">
-        <div className="container px-4 py-8 mx-auto">
+        <div className="container px-4 mx-auto">
           {/* Mobile Layout */}
           <div className="md:hidden space-y-8">
             <div className="text-center">
-              <h2 className="text-2xl font-bold mb-4">BAEK & CO.</h2>
+              <div className="flex items-center justify-center mb-10 mt-10">
+                <Link to="/" className="flex items-center space-x-2">
+                  <img width={120} src="logo.svg" alt="Logo" />
+                </Link>
+              </div>
               <address className="not-italic space-y-1">
                 <p>Av. Gaona 3707 - Piso 7</p>
                 <p>Ciudad Autónoma de Buenos Aires</p>
@@ -67,7 +71,7 @@ export function Footer() {
               ))}
             </div>
 
-            <div className="space-y-6">
+            <div className=" flex gap-20 items-center justify-center ">
               <LinkList title="Desarrollos" links={footerLinks.desarrollo} />
               <LinkList title="Mapa de sitio" links={footerLinks.mapaSitio} />
             </div>
@@ -83,7 +87,7 @@ export function Footer() {
 
           {/* Desktop Layout */}
           <div className="hidden md:grid md:grid-cols-3 md:gap-8">
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-5 mt-10">
               <div className="flex mb-4">
                 <Link to="/" className="flex items-center space-x-2">
                   <img width={120} src="logo.svg" alt="Logo" />
@@ -91,25 +95,24 @@ export function Footer() {
               </div>
               <div className="not-italic gap-3 flex flex-col text-[14px] space-y-1">
                 <a className="hover:underline" target="_blank" href="https://www.google.com/maps/place/BAEK+%26+Co/@-34.6218072,-58.4768428,17z/data=!4m6!3m5!1s0x95bccbab60c96de3:0x284694aa81f03c91!8m2!3d-34.6217923!4d-58.4770314!16s%2Fg%2F11rcl1kw60?coh=219816&entry=tts&g_ep=EgoyMDI0MDcwMS4wKgBIAVAD">Av. Gaona 3707 - Piso 7
-                <p>Ciudad Autónoma de Buenos Aires</p>
+                  <p>Ciudad Autónoma de Buenos Aires</p>
                 </a>
                 <p className="mt-4">
-  <a href="mailto:info@baekyco.com" className="text-white hover:underline">
-    info@baekyco.com
-  </a>
-</p>
+                  <a href="mailto:info@baekyco.com" className="text-white hover:underline">
+                    info@baekyco.com
+                  </a>
+                </p>
                 <Link target="_blank" className="hover:underline duration-150 ease-in-out" to={"https://wa.me/5491145822972"}>
-                <p>+54 11 4582-2972</p>
-                
+                  <p>+54 11 4582-2972</p>
                 </Link>
                 <p className="mt-4">Lunes a Viernes de 9:00 a 18:00
                   <br />
-                Sab, Dom y Feriados cerrado 
+                  Sab, Dom y Feriados cerrado
                 </p>
-              </div> 
+              </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-8 text-[14px] text-gray-400">
+            <div className="grid grid-cols-3 mt-10 gap-8 text-[14px] text-gray-400">
               <LinkList title="Desarrollos" links={footerLinks.desarrollo} />
               <LinkList title="Mapa de sitio" links={footerLinks.mapaSitio} />
             </div>
