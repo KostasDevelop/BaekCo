@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "../components/ui/button";
 import { Link } from "react-router-dom";
 import HeroTwo from "@/components/secondaryComponent/HeroTwo";
+import { AnimatedTestimonialsDemo } from "@/components/cardTestimonials";
 // Definimos los datos de los slides de imágenes
 const imageSlides = [
   { id: 1, image: "https://baekyco.com/img/home_slide_1.webp" },
@@ -130,6 +131,7 @@ export function HeroComponent() {
       </div>
     </div>
     <HeroTwo/>
+    <AnimatedTestimonialsDemo/>
     </>
   );
 }
