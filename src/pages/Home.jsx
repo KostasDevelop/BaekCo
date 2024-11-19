@@ -2,6 +2,7 @@ import * as React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "../components/ui/button";
 import { Link } from "react-router-dom";
+import HeroTwo from "@/components/secondaryComponent/HeroTwo";
 // Definimos los datos de los slides de imágenes
 const imageSlides = [
   { id: 1, image: "https://baekyco.com/img/home_slide_1.webp" },
@@ -49,7 +50,8 @@ export function HeroComponent() {
   const currentDescription = descriptions[currentDescriptionIndex];
 
   return (
-    <div className="relative h-screen w-full overflow-hidden">
+    <>
+    <div className="relative h-[820px] w-full overflow-hidden">
       {/* Sección de las imágenes */}
       <AnimatePresence initial={false}>
         <motion.div
@@ -74,7 +76,7 @@ export function HeroComponent() {
         <div className="max-w-4xl space-y-6">
           <div className="space-y-2">
             {/* Título fijo */}
-            <h1 className="text-4xl font-bold tracking-tighter text-white sm:text-5xl md:text-6xl">
+            <h1 className=" fontG text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
               DESARROLLOS INMOBILIARIOS EN BUENOS AIRES
             </h1>
           </div>
@@ -86,7 +88,7 @@ export function HeroComponent() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -50 }}
               transition={{ duration: 0.5 }}
-              className="mx-auto max-w-3xl text-lg text-gray-200"
+              className="mx-auto max-w-3xl text-[22px] text-gray-200 font-light"
             >
               {currentDescription}
             </motion.p>
@@ -126,7 +128,8 @@ export function HeroComponent() {
           </button>
         ))}
       </div>
-      
     </div>
+    <HeroTwo/>
+    </>
   );
 }

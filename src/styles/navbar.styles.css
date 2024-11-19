@@ -1,9 +1,26 @@
 .active-link::after {
     content: "";
     position: absolute;
-    bottom: -2px; /* Ajusta el espacio entre el texto y el subrayado */
+    bottom: -2px; 
     left: 0;
     width: 100%;
-    height: 2px; /* Grosor del subrayado */
-    background-color: #19354A; /* Usa el color del texto */
+    height: px; 
+    background-color: #19354A; 
   }
+
+  .interG{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  @media (max-width: 1175px) {
+    .xl\\:hidden {
+      display: block;
+    }
+    .xl\\:flex {
+      display: none;
+    }
+  }
+  
