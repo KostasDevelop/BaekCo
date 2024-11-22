@@ -3,8 +3,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "../components/ui/button";
 import { Link } from "react-router-dom";
 import HeroTwo from "@/components/secondaryComponent/HeroTwo";
-import { AnimatedTestimonialsDemo } from "@/components/cardTestimonials";
-// Definimos los datos de los slides de imágenes
+import "@/styles/navbar.styles.css"
+import ContactSection from "@/components/contact-section";
+import ServicesSection from "@/components/services-section";
+import HeroStats from "@/components/heroStats";
+import ModelUnitShowcase from "@/components/model-unit-showcase";
+
+
+
+
 const imageSlides = [
   { id: 1, image: "https://baekyco.com/img/home_slide_1.webp" },
   { id: 2, image: "https://baekyco.com/img/home_slide_2.webp" },
@@ -77,7 +84,7 @@ export function HeroComponent() {
         <div className="max-w-4xl space-y-6">
           <div className="space-y-2">
             {/* Título fijo */}
-            <h1 className=" fontG text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
+            <h1 className=" fontG text-4xl font-normal tracking-tight text-white sm:text-5xl md:text-6xl">
               DESARROLLOS INMOBILIARIOS EN BUENOS AIRES
             </h1>
           </div>
@@ -94,9 +101,9 @@ export function HeroComponent() {
               {currentDescription}
             </motion.p>
           </AnimatePresence>
-          <div className="flex justify-center gap-4">
+          <div className="flex pt-5 justify-center gap-14">
             <div>
-              <Button className="bg-white/90 text-black hover:bg-white" size="lg">
+              <Button className="bg-[#7F887F] text-[19px] font-light w-[170px] rounded-lg h-[60px] text-white hover:bg-[#19354A]">
                 Contacto
               </Button>
             </div>
@@ -104,8 +111,7 @@ export function HeroComponent() {
               <Link to={"/desarrollos"}>
                 <Button
                   variant=""
-                  className="border-white border bg-transparent hover:bg-white text-white  hover:text-black"
-                  size="lg"
+                  className="border-white text-[19px] w-[170px] font-light rounded-lg h-[60px] border bg-transparent hover:bg-white text-white  hover:text-black"
                   >
                   Ver más
                 </Button>
@@ -131,7 +137,10 @@ export function HeroComponent() {
       </div>
     </div>
     <HeroTwo/>
-    <AnimatedTestimonialsDemo/>
+    <ServicesSection/>
+    <HeroStats/>
+    <ModelUnitShowcase/>
+    <ContactSection/>
     </>
   );
 }
