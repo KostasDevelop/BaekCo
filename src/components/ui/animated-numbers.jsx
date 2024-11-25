@@ -2,25 +2,33 @@
 
 import { useEffect, useState } from 'react'
 
-export function AnimatedNumber({ number, delay = 0 }) {
-  const [displayedNumber, setDisplayedNumber] = useState('')
+export function AnimatedNumber({ number, delay = 0, duration = 2000, updateSpeed = 30 }) {
+  const [displayedNumber, setDisplayedNumber] = useState(0)
 
   useEffect(() => {
-    const animateNumber = async () => {
-      await new Promise(resolve => setTimeout(resolve, delay))
+    const target = parseInt(number.replace(/[^\d]/g, '')) // Extrae números (remueve '+' y 'M²')
+    const increment = Math.ceil(target / (duration / updateSpeed)) // Incremento basado en duración
+    let current = 0
 
-      for (let i = 0; i < number.length; i++) {
-        await new Promise(resolve => setTimeout(resolve, 200))
-        setDisplayedNumber(prev => prev + number[i])
-      }
+    const startAnimation = async () => {
+      await new Promise(resolve => setTimeout(resolve, delay)) // Retraso inicial
+      const interval = setInterval(() => {
+        current += increment
+        if (current >= target) {
+          setDisplayedNumber(target) // Asegura que no pase el límite
+          clearInterval(interval)
+        } else {
+          setDisplayedNumber(current)
+        }
+      }, updateSpeed) // Actualiza en el intervalo indicado
     }
 
-    animateNumber()
-  }, [number, delay])
+    startAnimation()
+  }, [number, delay, duration, updateSpeed])
 
   return (
-    <span className="inline-block">
-      {displayedNumber}
+    <span className="inline-block shadow-xl fontG">
+      {number.startsWith('+') ? `+${displayedNumber}` : displayedNumber}
     </span>
   )
 }
