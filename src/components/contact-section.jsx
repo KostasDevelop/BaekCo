@@ -31,7 +31,7 @@ const ContactItem = ({ icon: Icon, text, link }) => (
 const contactInfo = [
   { icon: MapPin, text: "Av. Gaona 3707 - Piso 7\nCiudad Autónoma de Buenos Aires", link: "https://www.google.com/maps?q=Av.+Gaona+3707" },
   { icon: Mail, text: "info@baekyco.com", link: "mailto:info@baekyco.com" },
-  { icon: Phone, text: "+54 11 4582-2972", link: "https://api.whatsapp.com/send/?phone=5491145822972&text&type=phone_number&app_absent=0" },
+  { icon: Phone, text: "+54 11 4582-2972", link: "http://api.whatsapp.com/send/?phone=5491145822972&text&type=phone_number&app_absent=0" },
 ]
 
 const subjectOptions = [
