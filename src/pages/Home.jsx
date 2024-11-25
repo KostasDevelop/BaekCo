@@ -8,6 +8,7 @@ import ContactSection from "@/components/contact-section";
 import ServicesSection from "@/components/services-section";
 import HeroStats from "@/components/heroStats";
 import ModelUnitShowcase from "@/components/model-unit-showcase";
+import NewsSlider from "@/components/Novedades";
 
 
 
@@ -140,6 +141,7 @@ export function HeroComponent() {
     <ServicesSection/>
     <HeroStats/>
     <ModelUnitShowcase/>
+    <NewsSlider/>
     <ContactSection/>
     </>
   );
