@@ -25,7 +25,7 @@ export default function ModelUnitShowcase() {
   return (
     <div className="relative px-20 md:px-0 flex items-center justify-center mt-28 min-h-[800px] bg-transparent">
       {/* Main Content */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
+      <div className="grid grid-cols-1 lg:grid-cols-2 ">
         {/* Text Content */}
         <div className="flex flex-col justify-center text-center md:text-start p-8 lg:p-12 bg-transparent">
           <h2 className="text-4xl font-bold mb-4">
@@ -43,12 +43,12 @@ export default function ModelUnitShowcase() {
         </div>
 
         {/* Image Gallery */}
-        <div className={`relative bg-gray-300 rounded-sm overflow-hidden ${isFullscreen ? 'w-full h-full' : 'w-auto h-[500px]'}`}>
+        <div className={`relative mx-auto bg-transparent rounded-sm overflow-hidden ${isFullscreen ? 'w-[700px] h-[700px]' : 'w-[499px] h-[490px]'}`}>
           <div className="absolute inset-0 flex items-center justify-center">
             <img
               src={images[currentIndex]}
               alt={`Model unit view ${currentIndex + 1}`}
-              className="object-contain max-w-full max-h-full" />
+              className="object-cover " />
           </div>
 
           {/* Navigation Controls */}
@@ -88,12 +88,12 @@ export default function ModelUnitShowcase() {
 
       {/* Fullscreen Dialog */}
       <Dialog open={isFullscreen} onOpenChange={setIsFullscreen}>
-        <DialogContent className="max-w-[900px] flex items-center justify-center h-[80vh] p-0">
+        <DialogContent className="max-w-[900px] bg-transparent border-none flex items-center justify-center h-[80vh] p-0">
           <div className="relative w-full h-full">
             <img
               src={images[currentIndex]}
               alt={`Model unit view ${currentIndex + 1}`}
-              className="w-full h-full object-cover" />
+              className="w-full h-full object-contain" />
             
             {/* Fullscreen Navigation Arrows */}
             <button
