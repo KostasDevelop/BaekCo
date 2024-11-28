@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Facebook, Instagram, Linkedin, Menu, X, Youtube } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "../components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "../components/ui/sheet";
 import "@/styles/navbar.styles.css";

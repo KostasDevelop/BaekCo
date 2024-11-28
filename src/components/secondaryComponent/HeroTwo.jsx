@@ -2,44 +2,43 @@ import React from "react";
 import "@/index.css"
 export default function HeroTwo() {
   return (
-    <section className="w-full gap-36 mt-20 flex flex-col items-center bg-white">
+    <section className="w-full gap-16 mt-20 flex flex-col items-center bg-white">
       {/* Sección Principal */}
-      <div className="md:w-full max-w-[400px] flex flex-col items-center justify-center gap-8 md:flex-row md:gap-20">
-  {/* Imagen */}
-  <div className="flex-shrink-0 max-w-[340px] md:w-[500px] md:h-[420px]">
-    <img
-      src="https://baekyco.com/img/torre_baek.webp"
-      alt="Edificio Baek"
-      className="rounded-lg shadow-md w-full h-full object-cover"
-    />
-  </div>
-
-  {/* Texto */}
-  <div className="flex flex-col items-center md:items-start gap-12 max-w-[600px] px-6 md:px-0">
-    <h4 className="text-2xl md:text-3xl font-semibold text-gray-600 leading-tight fontG text-center md:text-left">
-      Comprometidos con el habitar de las personas
-    </h4>
-    <p className="text-gray-600 text-sm md:text-base leading-relaxed text-center md:text-left">
-      <span className="font-bold text-gray-700">
-        Apuntamos a un alto nivel de calidad en todos nuestros proyectos
-        inmobiliarios
-      </span>{" "}
-      haciendo hincapié en el proceso constructivo; desde la optimización
-      de recursos humanos, materiales y económicos.
-    </p>
-    <button className="bg-gray-700 text-white rounded-md shadow hover:bg-[#808A80] transition px-10 py-2">
-      Ver más
-    </button>
-  </div>
-</div>
+      <div className="md:w-full  gap-20 flex flex-col items-center justify-center md:flex-row md:gap-40">
+        {/* Imagen */}
+          <div className="flex-shrink-0 pl-20 max-w-[470px] md:w-[500px] md:h-[420px]">
+          <img
+            src="https://baekyco.com/img/torre_baek.webp"
+            alt="Edificio Baek"
+            className="rounded-[30px] shadow-md w-full h-full object-cover"
+          />
+          </div>
+        {/* Texto */}
+        <div className="flex flex-col  md:items-start gap-8 w-full max-w-[600px] px-6 md:px-0">
+            <h4 className="text-2xl md:text-3xl font-semibold text-gray-600 leading-tight fontG text-center md:text-left">
+              Comprometidos con el habitar de las personas
+            </h4>
+            <p className="text-gray-600 text-sm md:text-base leading-relaxed text-center md:text-left">
+              <span className="font-bold text-gray-700">
+                Apuntamos a un alto nivel de calidad en todos nuestros proyectos
+                inmobiliarios
+              </span>{" "}
+              haciendo hincapié en el proceso constructivo; desde la optimización
+              de recursos humanos, materiales y económicos.
+            </p>
+            <button className="bg-gray-700  text-white rounded-md shadow hover:bg-[#808A80] transition px-10 py-2">
+              Ver más
+            </button>
+        </div>
+      </div>
 
 
       {/* Sección de Proyectos */}
-      <div className="w-full flex mb-10 mt-10 max-w-[1200px] px-3 flex-col md:flex-row ">
+      <div className="w-full hover:gap-10 flex mb-10 mt-10 max-w-[1200px] px-3 flex-col md:flex-row ">
         {/* Proyecto AURIAN */}
         <a
           href="#"
-          className="group relative flex-1 flex flex-col items-center overflow-hidden rounded-l-xl shadow-md transition-all hover:scale-[1.02]"
+          className="group relative flex-1 flex flex-col items-center overflow-hidden rounded-l-xl shadow-md transition-all hover:mx-4 hover:scale-[1.12]"
         >
           <div className="absolute inset-0 bg-[#C4A484]/70 transition-all group-hover:bg-[#C4A484]/50" />
           <img
@@ -74,7 +73,7 @@ export default function HeroTwo() {
         {/* Proyecto LeLis */}
         <a
           href="#"
-          className="group relative flex-1 flex flex-col items-center overflow-hidden rounded-r-xl shadow-md transition-all hover:scale-[1.02]"
+          className="group relative flex-1 flex flex-col items-center overflow-hidden rounded-r-xl shadow-md transition-all hover:mx-4 hover:scale-[1.12]"
         >
           <div className="absolute inset-0 bg-black/70 transition-all group-hover:bg-black/50" />
           <img
@@ -96,9 +95,9 @@ export default function HeroTwo() {
               />
             </div>
             <p className="text-end w-full max-w-[400px] text-sm md:text-base">
-            <span className="font-bold">
-            Reinterpreta la arquitectura clásica francesa para integrarla con la
-            funcionalidad moderna
+              <span className="font-bold">
+                Reinterpreta la arquitectura clásica francesa para integrarla con la
+                funcionalidad moderna
               </span>  y las nuevas formas de vivir, desarrollando
               espacios innovadores y estéticamente refinados.
             </p>

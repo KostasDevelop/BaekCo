@@ -2,6 +2,8 @@ import React from 'react'
 
 export default function Desarrollo() {
   return (
-    <div>Desarrollo</div>
+    <>
+      <h1>Desarrollos12312321</h1>
+    </>
   )
 }
