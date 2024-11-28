@@ -43,7 +43,7 @@ export default function ModelUnitShowcase() {
         </div>
 
         {/* Image Gallery */}
-        <div className={`relative mx-auto bg-transparent rounded-sm overflow-hidden ${isFullscreen ? 'w-[700px] h-[700px]' : 'w-[499px] h-[490px]'}`}>
+        <div className={`relative mx-auto bg-transparent rounded-sm overflow-hidden ${isFullscreen ? 'w-[700px] h-[700px]' :'w-full md:w-[459px] h-[490px]'}`}>
           <div className="absolute inset-0 flex items-center justify-center">
             <img
               src={images[currentIndex]}
