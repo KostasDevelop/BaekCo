@@ -23,7 +23,7 @@ function StatCard({ title, number, backgroundImage, delay, duration, updateSpeed
         </h3>
 
         {/* Números */}
-        <div className="flex items-center gap-2 text-[clamp(2rem,6vw,4rem)] font-bold relative">
+        <div className="flex items-center gap-2 md:text-[clamp(4rem,6vw,4rem)]  lg:text-[clamp(6rem,6vw,4rem)] text-[clamp(7rem,6vw,4rem)] font-bold relative">
           {number.startsWith('+') ? (
             <>
               <span className="text-[clamp(1.5rem,5vw,3rem)]">+</span>

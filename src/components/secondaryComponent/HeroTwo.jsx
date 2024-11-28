@@ -4,9 +4,9 @@ export default function HeroTwo() {
   return (
     <section className="w-full gap-36 mt-20 flex flex-col items-center bg-white">
       {/* Sección Principal */}
-      <div className="w-full flex flex-col items-center justify-center gap-8 md:flex-row md:gap-40">
+      <div className="md:w-full max-w-[400px] flex flex-col items-center justify-center gap-8 md:flex-row md:gap-20">
   {/* Imagen */}
-  <div className="flex-shrink-0 w-full md:w-[500px] md:h-[520px]">
+  <div className="flex-shrink-0 max-w-[340px] md:w-[500px] md:h-[420px]">
     <img
       src="https://baekyco.com/img/torre_baek.webp"
       alt="Edificio Baek"

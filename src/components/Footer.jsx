@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { footerLinks } from "./routes"; // Importar las rutas
-
+import "@/styles/navbar.styles.css"
 // Componente para íconos de redes sociales
 function SocialIcon({ label, path, iconPath }) {
   return (
@@ -41,18 +41,19 @@ function LinkList({ title, links }) {
 // Componente Footer Principal
 export function Footer() {
   return (
-    <footer className="bg-[#19354A] px-6 md:px-20 text-white">
-      <div className="container mx-auto">
+    <footer className="bg-[#19354A] flex items-center mx-auto w-full justify-between px-6 md:px-20 text-white">
+      <div className="container flex items-center text-center flex-col mx-auto">
         {/* Layout general */}
-        <div className="grid gap-10 md:grid-cols-3 lg:grid-cols-4 py-10">
+        <div className="flex items-center flex-wrap justify-center gap-20 py-10">
           {/* Columna de información */}
-          <div className="space-y-6">
-            <Link to="/" className="flex items-center">
+          <div className="space-y-6 flex flex-col md:justify-center items-center md:items-start">
+            <Link to="/" className="flex justify-center md:justify-center items-center md:items-start">
               <img width={120} src="logo.svg" alt="Logo" />
             </Link>
-            <address className="not-italic text-sm space-y-2">
-              <p>Av. Gaona 3707 - Piso 7</p>
-              <p>Ciudad Autónoma de Buenos Aires</p>
+            <address className="not-italic flex flex-col items-start text-sm space-y-2">
+            <a className="hover:underline text-start" target="_blank" href="https://maps.app.goo.gl/nnJT1Cy61YQA2NtcA">Av. Gaona 3707 - Piso 7
+                  <p>Ciudad Autónoma de Buenos Aires</p>
+                </a>
               <a href="mailto:info@baekyco.com" className="block hover:underline">
                 info@baekyco.com
               </a>
@@ -63,21 +64,22 @@ export function Footer() {
               <p>Sab, Dom y Feriados cerrado</p>
             </address>
           </div>
-    <div className="flex justify-center mx-auto gap-40 md:gap-32">
+          <div className="flex md:border-none border-b  border-white/10 justify-center mx-auto gap-40 md:gap-32">
+            <div className="flex md:gap-40 gap-20">
+              {/* Columna de enlaces */}
+              <div className="space-y-6">
+                <LinkList title="Desarrollos" links={footerLinks.desarrollo} />
+              </div>
 
-          {/* Columna de enlaces */}
-          <div className="space-y-6">
-            <LinkList title="Desarrollos" links={footerLinks.desarrollo} />
+              <div className="space-y-6">
+                <LinkList title="Mapa de sitio" links={footerLinks.mapaSitio} />
+              </div>
+            </div>
+
           </div>
-
-          <div className="space-y-6">
-            <LinkList title="Mapa de sitio" links={footerLinks.mapaSitio} />
-          </div>
-
-    </div>
           {/* Columna del eslogan */}
-          <div className="hidden md:flex items-center justify-end lg:col-span-1">
-            <p className="text-xl md:text-2xl font-bold text-right leading-tight">
+          <div className="md:flex items-center justify-end lg:col-span-1">
+            <p className="text-xl md:px-40 fontG font-mono md:text-2xl text-right leading-tight">
               EDIFICAMOS CONCEPTOS,
               <br />
               CONSTRUIMOS LEGADO.
@@ -121,3 +123,4 @@ export function Footer() {
     </footer>
   );
 }
+
