@@ -14,6 +14,15 @@ const slides = [
         image: "https://baekyco.com/img/novedad_2024_03_26.webp",
     },
     {
+        id: 1,
+        tag: "Aurian",
+        date: "26.06.24",
+        title: "Próximamente AURIAN® Hollywood en Palermo",
+        description:
+            "BAEK & Co adquirió en primera etapa los lotes de Juan B. Justo y Honduras (Actualmente: Movistar y Casa Rock).",
+        image: "https://baekyco.com/img/novedad_2024_03_26.webp",
+    },
+    {
         id: 2,
         tag: "LeLis",
         date: "08.06.24",
@@ -40,7 +49,7 @@ const slides = [
             "Elegí el equilibrio perfecto entre estilo y amplitud en el barrio de Flores",
         description:
             "Conocé los 4 ambientes disponibles con cochera exclusiva, diseñados para ofrecerte el máximo confort y funcionalidad en LeLis CHAMEAU.",
-        image: "https://baekyco.com/img/novedad_2024_07_18.webp",
+        image: "https://www.grupoorve.com/media/mageplaza/blog/post/c/u/cuanto_mide_departamento_ideal.jpg",
     },
     {
         id: 5,
@@ -60,7 +69,7 @@ const slides = [
             "Elegí el equilibrio perfecto entre estilo y amplitud en el barrio de Flores",
         description:
             "Conocé los 4 ambientes disponibles con cochera exclusiva, diseñados para ofrecerte el máximo confort y funcionalidad en LeLis CHAMEAU.",
-        image: "https://baekyco.com/img/novedad_2024_07_18.webp",
+        image: "https://images.adsttc.com/media/images/5f10/80ed/b357/65e1/f700/0086/newsletter/07112019-Jaime_Navarro_6319.jpg?1594917086",
     },
     {
         id: 7,
@@ -70,81 +79,104 @@ const slides = [
             "Elegí el equilibrio perfecto entre estilo y amplitud en el barrio de Flores",
         description:
             "Conocé los 4 ambientes disponibles con cochera exclusiva, diseñados para ofrecerte el máximo confort y funcionalidad en LeLis CHAMEAU.",
-        image: "https://baekyco.com/img/novedad_2024_07_18.webp",
+        image: "https://i0.wp.com/www.socovesa.cl/blog/web/wp-content/uploads/2023/09/departamentos-vanguardia.webp?resize=1400%2C700&ssl=1",
     },
+    {
+        id: 8,
+        tag: "LeLis",
+        date: "26.05.24",
+        title:
+            "Elegí el equilibrio perfecto entre estilo y amplitud en el barrio de Flores",
+        description:
+            "Conocé los 4 ambientes disponibles con cochera exclusiva, diseñados para ofrecerte el máximo confort y funcionalidad en LeLis CHAMEAU.",
+        image: "https://media.admagazine.com/photos/6317bd95d75f2fd76bd148aa/master/w_1600%2Cc_limit/APR%2520-%2520Nooor%2520-%2520Appartement%252045m2%2520rue%2520de%2520Grenelle%2520-%2520cre%25CC%2581dit%2520Nicolas%2520MatheusG19_2044.jpg",
+    }
 ];
 
 export default function NewsSlider() {
-    const [currentSlide, setCurrentSlide] = useState(0);
+    const [currentIndex, setCurrentIndex] = useState(0); // Índice de la primera card visible
+    const itemsPerPage = 3; // Número de cards visibles al mismo tiempo
 
+    // Calcular los elementos visibles
+    const visibleSlides = slides.slice(currentIndex, currentIndex + itemsPerPage);
+
+    // Avanzar al siguiente conjunto de slides
     const nextSlide = () => {
-        setCurrentSlide((prev) => (prev + 1) % slides.length);
+        setCurrentIndex((prev) =>
+            prev + itemsPerPage >= slides.length ? 0 : prev + itemsPerPage
+        );
     };
 
+    // Retroceder al conjunto anterior de slides
     const prevSlide = () => {
-        setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+        setCurrentIndex((prev) =>
+            prev - itemsPerPage < 0
+                ? slides.length - (slides.length % itemsPerPage || itemsPerPage)
+                : prev - itemsPerPage
+        );
     };
 
     return (
-        <div className="w-full mx-auto px-4 py-8">
-            <h2 className="text-4xl font-bold text-center mb-8">Novedades</h2>
-            <div className="relative">
-                <div className="overflow-hidden rounded-lg">
-                    <div
-                        className="flex transition-transform duration-500 ease-out"
-                        style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+        <div className="w-full flex flex-col items-center justify-center mx-auto px-4 py-4">
+            <h2 className="text-3xl lg:text-4xl font-bold text-center mb-8">
+                Novedades
+            </h2>
+            <div className="relative items-end justify-center flex flex-col">
+                {/* Flechas de Navegación */}
+                <div className="absolute py-8 px-3 items-start justify-end inset-0 flex gap-2 z-40">
+                    <Button
+                        variant="outline"
+                        size="icon"
+                        className="bg-white/80 p-10 hover:bg-black/20 border-none backdrop-blur-sm"
+                        onClick={prevSlide}
                     >
-                        {slides.map((slide) => (
-                            <div key={slide.id} className="w-full flex-shrink-0">
-                                <Card className="relative h-[600px] overflow-hidden">
-                                    {/* Imagen */}
-                                    <img
-                                        src={slide.image}
-                                        alt={slide.title}
-                                        className="object-cover w-full h-full"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent pointer-events-none" />
-                                    <CardContent className="absolute inset-0 flex flex-col justify-end p-6 z-10 text-white">
-                                        <div className="space-y-4 flex items-start flex-col">
-                                            <span className="text-3xl inline-block px-3 py-1 rounded-full bg-white/20 backdrop-blur-xl">{slide.date}</span>
-                                            <h3 className="text-4xl max-w-6xl font-bold leading-tight">{slide.title}</h3>
-                                            <p className="text-1xl text-white/90 max-w-2xl">{slide.description}</p>
-                                        </div>
-                                    </CardContent>
-                                    <CardContent className="absolute inset-0 flex flex-col justify-start p-6 z-10 text-white">
-                                        <div className="space-y-4 flex items-center justify-center">
-                                            <div className="flex justify-start items-center gap-4">
-                                                <span className="inline-block text-3xl px-3 py-1 rounded-full bg-white/20 backdrop-blur-xl">
-                                                    #{slide.tag}
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </CardContent>
-                                </Card>
-                            </div>
-                        ))}
-                    </div>
+                        <ChevronLeft className="h-6 w-6" />
+                        <span className="sr-only">Slide anterior</span>
+                    </Button>
+                    <Button
+                        variant="outline"
+                        size="icon"
+                        className="p-10 bg-white/80 hover:bg-black/20 border-none backdrop-blur-sm"
+                        onClick={nextSlide}
+                    >
+                        <ChevronRight className="h-6 w-6" />
+                        <span className="sr-only">Siguiente slide</span>
+                    </Button>
                 </div>
-                <Button
-                    variant="outline"
-                    size="icon"
-                    className="absolute hover:text-gray-300 left-4 top-1/2 -translate-y-1/2 bg-white/50 hover:bg-black/20 border-none backdrop-blur-sm"
-                    onClick={prevSlide}
-                >
-                    <ChevronLeft className="h-6 w-6" />
-                    <span className="sr-only">Imagen anterior</span>
-                </Button>
-                <Button
-                    variant="outline"
-                    size="icon"
-                    className="absolute right-4 top-1/2 hover:text-white -translate-y-1/2 bg-white/50 hover:bg-black/20 text-white border-none backdrop-blur-sm"
-                    onClick={nextSlide}
-                >
-                    <ChevronRight className="h-6 w-6" />
-                    <span className="sr-only">Siguiente imagen</span>
-                </Button>
-                <div className="absolute bottom-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm font-medium backdrop-blur-sm">
-                    {currentSlide + 1} / {slides.length}
+
+                {/* Contenedor en Fila */}
+                <div className="flex gap-2 overflow-hidden w-full">
+                    
+                    {visibleSlides.map((slide) => (
+                        <Card
+                            key={slide.id}
+                            className="relative mx-auto w-full max-w-[600px] flex-shrink-0"
+                        >
+                            <div className="absolute z-10 justify-center items-center px-4 pt-10">
+                                    <h3 className="text-5xl border p-3 text-white">#{slide.tag}</h3>
+                                </div>
+                            {/* Imagen que ocupa toda la tarjeta */}
+                            <div className="relative w-full h-[600px] ">
+                                <img
+                                    src={slide.image}
+                                    alt={slide.title}
+                                    className="w-full  h-full object-cover rounded-xl"
+                                />
+                                
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent pointer-events-none" />
+                                
+                            </div>
+                            {/* Contenido */}
+                            
+                            <CardContent className="absolute inset-0 flex flex-col justify-end p-4 z-10 text-white">
+                                <span className="text-lg bg-white/20 px-3 py-1 rounded-md backdrop-blur-sm mb-2">
+                                    {slide.date}
+                                </span>
+                                <h3 className="text-xl font-bold">{slide.title}</h3>
+                                <p className="text-sm mt-2">{slide.description}</p>
+                            </CardContent>
+                        </Card>
+                    ))}
                 </div>
             </div>
         </div>

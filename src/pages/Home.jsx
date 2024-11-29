@@ -11,8 +11,6 @@ import ModelUnitShowcase from "@/components/model-unit-showcase";
 import NewsSlider from "@/components/Novedades";
 
 
-
-
 const imageSlides = [
   { id: 1, image: "https://baekyco.com/img/home_slide_1.webp" },
   { id: 2, image: "https://baekyco.com/img/home_slide_2.webp" },
