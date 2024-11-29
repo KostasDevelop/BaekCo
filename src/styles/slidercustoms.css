@@ -1,0 +1,15 @@
+/* Custom styles for the slider */
+.property-slider .slick-track {
+    display: flex !important;
+    gap: 1rem;
+  }
+  
+  .property-slider .slick-slide {
+    height: inherit !important;
+  }
+  
+  .property-slider .slick-slide > div {
+    height: 100%;
+  }
+  
+  
