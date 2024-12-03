@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom';
 
 export default function CustomPlansHero() {
   return (
     <div className="relative h-[500px] w-full overflow-hidden">
-      {/* Background Image with Parallax Effect */}
       <motion.div
         initial={{ scale: 1.1 }}
         animate={{ 
@@ -32,8 +32,10 @@ export default function CustomPlansHero() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="bg-slate-800 w-full max-w-[300px] text-white px-8 py-3 rounded-lg text-lg font-medium 
-                     hover:bg-slate-700 transition-colors duration-200 shadow-lg">
+            hover:bg-slate-700 transition-colors duration-200 shadow-lg">
+              <Link target='_blank' to={'https://api.whatsapp.com/send/?phone=5491134608762&text=Hola%21+Me+gustar%C3%ADa+recibir+m%C3%A1s+informaci%C3%B3n+sobre+inversi%C3%B3n.&type=phone_number&app_absent=0'}>
             Más información
+                       </Link>
           </motion.button>
         </motion.div>
       </div>
