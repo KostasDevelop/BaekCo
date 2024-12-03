@@ -47,4 +47,31 @@
   
 
   
+  .bg-section-background {
+    position: relative; /* Necesario para que el pseudo-elemento ::before funcione */
+    background-image: url('https://baekyco.com/img/home_slide_2.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 78vh;
+    display: flex; /* Para mantener el contenido centrado */
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .bg-section-background::before {
+    content: ""; /* Necesario para que el pseudo-elemento sea visible */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Negro con 50% de opacidad */
+    z-index: 1; /* Sitúa el overlay debajo del contenido */
+  }
+  
+  .bg-section-background > * {
+    position: relative;
+    z-index: 2; /* Sitúa el contenido por encima del overlay */
+  }
   
