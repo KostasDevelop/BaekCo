@@ -9,18 +9,18 @@ export function Layout() {
   // Generar breadcrumbs solo si no estamos en la página Home
   const breadcrumbs = location.pathname !== "/"
     ? location.pathname
-        .split("/")
-        .filter((crumb) => crumb) // Ignorar partes vacías de la ruta
-        .map((crumb, index) => {
-          const path = `/${location.pathname
-            .split("/")
-            .slice(1, index + 2)
-            .join("/")}`;
-          return {
-            label: crumb.charAt(0).toUpperCase() + crumb.slice(1), // Capitalizar
-            path,
-          };
-        })
+      .split("/")
+      .filter((crumb) => crumb) // Ignorar partes vacías de la ruta
+      .map((crumb, index) => {
+        const path = `/${location.pathname
+          .split("/")
+          .slice(1, index + 2)
+          .join("/")}`;
+        return {
+          label: crumb.charAt(0).toUpperCase() + crumb.slice(1), // Capitalizar
+          path,
+        };
+      })
     : [];
 
   return (
@@ -29,8 +29,8 @@ export function Layout() {
 
       {/* Breadcrumbs: Solo se muestran si no estamos en Home */}
       {breadcrumbs.length > 0 && (
-        <nav aria-label="Breadcrumb" className="bg-transparent w-full max-w-[800px] ">
-          <ol className="items-start justify-center flex text-xl py-3">
+        <nav aria-label="Breadcrumb" className="px-10 bg-transparent w-fit ">
+          <ol className="items-start justify-start md:justify-center flex text-xl py-3">
             <li>
               <Link to="/" className="text-gray-700 hover:text-blue-600 hover:underline">
                 Home

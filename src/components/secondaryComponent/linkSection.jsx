@@ -11,12 +11,12 @@ export default function LinkSection({ descriptions, itemSection }) {
     <>
     <div className="relative flex items-center justify-center px-4 text-center bg-section-background bg-cover bg-center bg-no-repeat">
       <div className="max-w-4xl space-y-6">
-        <div className="space-y-2">
+        <div className="flex w-full justify-center items-center ">
           {/* Título dinámico basado en el primer elemento de itemSection */}
           {itemSection.map((item) => (
             <h1
               key={item.id}
-              className="fontG text-4xl font-normal tracking-tight text-white sm:text-5xl md:text-6xl"
+              className="fontG text-3xl font-normal tracking-tight text-white sm:text-5xl md:text-6xl"
             >
               {item.title}
             </h1>
@@ -28,7 +28,7 @@ export default function LinkSection({ descriptions, itemSection }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -50 }}
             transition={{ duration: 0.5 }}
-            className="mx-auto max-w-3xl text-[22px] text-gray-200 font-light"
+            className=" w-full md:max-w-[540px] max-w-[340px] mx-auto md:text-[19px] text-[18px] text-gray-200 font-light"
           >
             {/* Mostrar la descripción del primer elemento */}
             {descriptions[0] || ""}
@@ -53,7 +53,7 @@ export default function LinkSection({ descriptions, itemSection }) {
                     "https://api.whatsapp.com/send/?phone=5491145822972&text&type=phone_number&app_absent=0"
                   }
                 >
-                  <Button className="border-white text-[19px] w-[170px] font-light rounded-lg h-[60px] border bg-transparent hover:bg-white text-white hover:text-black">
+                  <Button className="border-none text-[19px] w-[170px] font-light rounded-lg h-[60px] border bg-[#808A80] hover:bg-[#19354A] text-white hover:text-gray-100">
                     Contactanos
                   </Button>
                 </Link>
@@ -63,8 +63,6 @@ export default function LinkSection({ descriptions, itemSection }) {
         </div>
       </div>
     </div>
-    <InvestmentOptions/>
-    <CustomPlansHero/>
     </>
   );
 }

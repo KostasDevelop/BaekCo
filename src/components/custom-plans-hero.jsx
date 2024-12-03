@@ -31,7 +31,7 @@ export default function CustomPlansHero() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-slate-800 text-white px-8 py-3 rounded-lg text-lg font-medium 
+            className="bg-slate-800 w-full max-w-[300px] text-white px-8 py-3 rounded-lg text-lg font-medium 
                      hover:bg-slate-700 transition-colors duration-200 shadow-lg">
             Más información
           </motion.button>
